@@ -93,6 +93,12 @@ describe('dafo', () => {
 			assert.equal(ret, unit.week);
 		});
 	});
+
+	it('getWeekRange()', () => {
+		let range = dafo.getWeekRange({ year: 2018, week: 1, mode: 0 });
+		assert.equal(range.first.getDate(), 7);
+		assert.equal(range.last.getDate(), 13);
+	});
 	
 	it('getYearWeek()', () => {
 		WEEK_MODE_TEST_UNITS.forEach(unit => {

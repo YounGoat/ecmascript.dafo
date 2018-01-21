@@ -12,6 +12,7 @@ module.exports = {
     getDayOfYear  : require('./getDayOfYear'),
     getMonthDays  : require('./getMonthDays'),
     getWeekOfYear : require('./getWeekOfYear'),
+    getWeekRange  : require('./getWeekRange'),
     getYearWeek   : require('./getYearWeek'),
     isLeapYear    : require('./isLeapYear'),
 };

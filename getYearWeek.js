@@ -7,6 +7,7 @@ const MODULE_REQUIRE = 1
     /* NPM */
     
     /* in-package */
+    , getWeek1Offset = require('./lib/getWeek1Offset')
     , getDayOfYear = require('./getDayOfYear')
     ;
 
@@ -30,55 +31,13 @@ const MODULE_REQUIRE = 1
  * 
  */
 function getYearWeek(d, mode = 0) {
-    // Get the weekday of Jan 1st.
-    let Jan1st = new Date(d);
-    Jan1st.setMonth(0);
-    Jan1st.setDate(1);
-    let weekdayOfJan1st = Jan1st.getDay();
-
-    // The offset from Jan 1st to the first day of week 1.
-    // 0 means Jan 1st is just the first day of week 1.
-    // Negative offset means the first day of week 1 is actually in last year.
-    let week1Offset = null;
-    
-    // First day of week: Sunday
-    // Week 1 is the first week with a Sunday in this year. Namely, 
-    // Week 1 is the first week with a Thursday in this year.
-    if (mode == 0 || mode == 2) {
-        week1Offset = (7 - weekdayOfJan1st) % 7;
-    } 
-
-    // First day of week: Monday
-    // Week 1 is the first week with a Monday in this year.
-    else if (mode == 5 || mode == 7) {
-        week1Offset = (8 - weekdayOfJan1st) % 7;
-    }
-
-    // First day of week: Sunday
-    // Week 1 is the first week with 4 or more days this year.
-    else if (mode == 4 || mode == 6) {
-        week1Offset = [0,1,2,3].includes(weekdayOfJan1st) 
-            ? 0 - weekdayOfJan1st
-            : 7 - weekdayOfJan1st
-            ;
-    } 
-
-    // First day of week: Monday
-    // Week 1 is the first week with 4 or more days this year.
-    else if (mode == 1 || mode == 3) {
-        week1Offset = [1,2,3,4].includes(weekdayOfJan1st) 
-            ? 1 - weekdayOfJan1st
-            : (8 - weekdayOfJan1st) % 7
-            ;
-    }
-    
     let year = d.getFullYear();
+    let week1Offset = getWeek1Offset(year, mode);
     let daysOfYear = getDayOfYear(d);
 
     // In these modes, dates before week 1 belong to the last week of last year.
     if (daysOfYear <= week1Offset && [2,3,6,7].includes(mode)) {
-        let Dec31st = new Date(Jan1st);
-        Dec31st.setDate(0);
+        let Dec31st = new Date(year - 1, 11, 31);
         return getYearWeek(Dec31st, mode);
     }
     else {

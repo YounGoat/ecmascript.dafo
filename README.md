@@ -1,6 +1,11 @@
 #	dafo
 __General Date Format__
 
+[![total downloads of dafo](https://img.shields.io/npm/dt/dafo.svg)](https://www.npmjs.com/package/dafo)
+[![dafo's License](https://img.shields.io/npm/l/dafo.svg)](https://www.npmjs.com/package/dafo)
+[![latest version of dafo](https://img.shields.io/npm/v/dafo.svg)](https://www.npmjs.com/package/dafo)
+[![build status of github.com/YounGoat/ecmascript.dafo](https://travis-ci.org/YounGoat/ecmascript.dafo.svg?branch=master)](https://travis-ci.org/YounGoat/ecmascript.dafo)
+
 ##	Table of contents
 
 *	[DISCLAIMER](#disclaimer)
@@ -177,9 +182,14 @@ ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()`
 	Get the week number of year.  
 	Read section [Week Mode](#week-mode) for details about the *mode* argument.
 
+*	{ Date *first*, Date *last* } __dafo.getWeekRange__({ number *year*, number *week*, number *mode* })  
+	Get the week range.  
+	Read section [Week Mode](#week-mode) for details about the *mode* argument.
+	
 *	{ *year*, *week* } __dafo.getYearWeek__(Date *date*, number *mode*)  
 	Get the week number of year, and the corresponding year.  
-	In some *mode*, the first few days in a year may be belonging to the last week of last year. Read section [Week Mode](#week-mode) for details about the *mode* argument.
+	In some *mode*, the first few days in a year may be belonging to the last week of last year.   
+	Read section [Week Mode](#week-mode) for details about the *mode* argument.
 
 *	boolean __dafo.isLeapYear__(Date *date*)  
 	Return `true` if the year of *date* is leap. Otherwise return `false`.
