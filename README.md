@@ -41,7 +41,7 @@ DATE_FORMAT(new Date, '%Y-%M-%d');
 DATE_FORMAT(new Date, DATE_FORMAT.USA);
 ```
 
-See MySQL documentation [Date and Time Functions, DATE_FORMAT](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format) for details, and [GET_FORMAT](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_get-format) for available predefined formats.
+See MySQL Reference Manual [Date and Time Functions, DATE_FORMAT](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format) for details, and [GET_FORMAT](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_get-format) for available predefined formats.
 
 ###	PHP Style
 
@@ -104,7 +104,7 @@ Follow the next table for frequently used format characters which supported by _
 | Time       | 00..59            | __%s__ | seconds |
 | Time       | 23:59:59          | __%T__ | time (24-hour) |
 
-ATTENTION: Most, but __NOT ALL__ format characters used in MySQL function `DATE_FORMAT()` are supported by __dafo/mysql__.
+ATTENTION: Most, but __NOT ALL__ format characters used in MySQL function `DATE_FORMAT()` are supported by __dafo/mysql__.
 
 ###	dafo/php
 
@@ -116,7 +116,15 @@ const date_format = require('dafo/php');
 As what `date()` in PHP does, __dafo/php__ will recognize special single characters in format string and transform them into corresponding date text. Unlike __dafo/mysql__, there are no leading escapers before these special characters and those not recognized will be preserved. 
 
 __Escape Character__  
-If you want to keep the format character from being replaced, prefix it with an escape character anti-slash `\`, e.g. `date_format(new Date(2000, 0, 1), '\\Y Y')` will return `'Y 2000'`. Because `\` is also the default escaper in JavaScript string, you should input double anti-slash characters `\\` in string literal to create a real `\` in the format.
+If you want to keep the format character from being replaced, prefix it with an escape character anti-slash `\`, e.g. 
+```javascript
+date_format(new Date(2000, 0, 1), '\\Y Y');
+// RETURN 'Y 2000'
+
+// Because '\' is also the default escaper in JavaScript string, 
+// you should input double anti-slash characters '\\' in string literal 
+// to create a real '\' in the format.
+```
 
 Follow the next table for frequently used format characters which supported by __dafo/php__:
 
@@ -158,7 +166,7 @@ ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()`
 
 ###	Others
 
-*	number __dafo.getDayOfYear__(Date *date*)  
+*	number __dafo.getDayOfYear__(Date *date*)  
 	Get the day of the current year.  
 	Jan 1st is always 1, and Dec 31st may be 365 (not leap year) or 366 (leap year).
 
@@ -179,6 +187,7 @@ ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()`
 ###	Week Mode
 
 The definition of *mode* argument in functions `dafo.getWeekOfYear()` and `dafo.getYearWeek()` is borrowed from [MySQL function `WEEK()`](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_week). The next table is cited from MySQL Manual and explains the difference between modes: 
+
 | Mode  | 1st weekday | Range | Week 1 is the first week ...  |
 | :---  | :---------- | :---- | :---------------------------- |
 | __0__ | Sunday      | 0-53  | with a Sunday in this year    |
@@ -193,7 +202,7 @@ The definition of *mode* argument in functions `dafo.getWeekOfYear()` and `dafo.
 
 ##  Why *dafo*
 
-There have been lots of packages helping to format date / datetime. Generally, a format string is required to indicate what kind of date string you want, e.g. *YY* in __moment__ means *2 digit year*. The formats used in those packages are similiar, but more or less different from each other. It is really confusing! For those who are familiar with syntax used in `date()` in PHP or `DATE_FORMAT()` in MySQL, it is wasting time to learn another one. 
+There have been lots of packages helping to format date or datetime. Generally, a format string is required to indicate what kind of date string you want, e.g. *YY* in __moment__ means *2 digit year*. The formats used in those packages are similiar, but more or less different from each other. It is really confusing! For those who are familiar with syntax used in `date()` in PHP or `DATE_FORMAT()` in MySQL, it is wasting time to learn another one. 
 
 I am tired of inventing something new but useless. What uou will not meet with in __dafo__ is NOT a new *general* format, but something you have been familiar with.
 
