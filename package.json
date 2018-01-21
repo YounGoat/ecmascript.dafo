@@ -1,0 +1,32 @@
+{
+    "bin": {
+        "dafo": "bin/dafo.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "^3.3.0"
+    },
+    "directories": {},
+    "scripts": {
+        "test": "mocha"
+    },
+    "name": "dafo",
+    "version": "0.0.0",
+    "main": "index.js",
+    "keywords": [
+        "date-format",
+        "mysql-date-format",
+        "php-date-format"
+    ],
+    "homepage": "https://github.com/YounGoat/ecmascript.dafo",
+    "description": "General Date Format",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/YounGoat/ecmascript.dafo.git"
+    },
+    "author": {
+        "name": "YounGoat",
+        "email": "youngoat@163.com",
+        "url": "https://youngoat.github.io"
+    }
+}
