@@ -198,12 +198,12 @@ ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()`
 
 The definition of *mode* argument in functions `dafo.getWeekOfYear()` and `dafo.getYearWeek()` is borrowed from [MySQL function `WEEK()`](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_week). The next table is cited from MySQL Manual and explains the difference between modes: 
 
-| Mode  | 1st weekday | Range | Week 1 is the first week ...  |
-| :---  | :---------- | :---- | :---------------------------- |
+| Mode  | 1st weekday | Range | Week 1 is the first week ...  | Follows |
+| :---  | :---------- | :---- | :---------------------------- | :------ |
 | __0__ | Sunday      | 0-53  | with a Sunday in this year    |
 | __1__ | Monday      | 0-53  | with 4 or more days this year |
 | __2__ | Sunday      | 1-53  | with a Sunday in this year    |
-| __3__ | Monday      | 1-53  | with 4 or more days this year |
+| __3__ | Monday      | 1-53  | with 4 or more days this year | ISO 8601 |
 | __4__ | Sunday      | 0-53  | with 4 or more days this year |
 | __5__ | Monday      | 0-53  | with a Monday in this year    |
 | __6__ | Sunday      | 1-53  | with 4 or more days this year |
@@ -222,3 +222,4 @@ I am tired of inventing something new but useless. What uou will not meet with i
 
 *	MySQL 5.7 Reference Manual > [Date and Time Functions](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format)
 *	PHP Manual > [Date/Time Functions](http://php.net/manual/en/function.date.php)
+*	[Date and time format - ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) or WIKIPEDIA: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)	
