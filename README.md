@@ -207,7 +207,7 @@ The definition of *mode* argument in functions `dafo.getWeekOfYear()` and `dafo.
 | __4__ | Sunday      | 0-53  | with 4 or more days this year |
 | __5__ | Monday      | 0-53  | with a Monday in this year    |
 | __6__ | Sunday      | 1-53  | with 4 or more days this year |
-| __7__ | Monday      | 1-53  | with a Monday in this year    |å
+| __7__ | Monday      | 1-53  | with a Monday in this year    |
 
 
 ##  Why *dafo*
