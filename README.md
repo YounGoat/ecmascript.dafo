@@ -6,7 +6,11 @@ __General Date Format__
 [![latest version of dafo](https://img.shields.io/npm/v/dafo.svg)](https://www.npmjs.com/package/dafo)
 [![build status of github.com/YounGoat/ecmascript.dafo](https://travis-ci.org/YounGoat/ecmascript.dafo.svg?branch=master)](https://travis-ci.org/YounGoat/ecmascript.dafo)
 
-##	Table of contents
+##	Description
+
+To format date in [PHP](#dafophp) or [MySQL](#dafomysql) style.
+
+##	Table of Contents
 
 *	[DISCLAIMER](#disclaimer)
 *	[Get Started](#get-started)
@@ -17,9 +21,6 @@ __General Date Format__
 *	[Why dafo](#why-dafo)
 *	[About](#about)
 *	[References](#references)
-
-##	Links
-
 *	[CHANGE LOG](./CHANGELOG.md)
 *	[Homepage](https://github.com/YounGoat/ecmascript.dafo)
 
