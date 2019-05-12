@@ -15,4 +15,5 @@ module.exports = {
     getWeekRange  : require('./getWeekRange'),
     getYearWeek   : require('./getYearWeek'),
     isLeapYear    : require('./isLeapYear'),
+    parse         : require('./parse'),
 };

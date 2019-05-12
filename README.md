@@ -17,6 +17,7 @@ To format date in [PHP](#dafophp) or [MySQL](#dafomysql) style.
 *	[API](#api)
 	*	[dafo/mysql](#dafomysql)
 	*	[dafo/php](#dafophp)
+	*	[dafo.parse](#dafoparse)
 	*	[Others](#others)
 *	[Why dafo](#why-dafo)
 *	[About](#about)
@@ -170,6 +171,29 @@ Follow the next table for frequently used format characters which supported by _
 
 ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()` are supported by __dafo/php__.
 
+###	dafo.parse
+
+```javascript
+const dafo = require('dafo');
+
+// Get a Date object.
+let date = dafo.parse('2019.04.01', 'Y.m.d');
+```
+
+*	Date __dafo.parse__(string *date*, string *format*)
+
+Argument *format* describes what and how makes up *date* string. Acceptable placeholders include:  
+( Other characters are regarded as normal text. )
+
+| Catergory  | Example           | Ch    | Meaning                                     |
+| :--------- | :---------------- | :---- | :------------------------------------------ |
+| Day        | 01..31            | __d__ | day of the month |
+| Month      | 01..12            | __m__ | month number |
+| Year       | 0100, 1899, 2050  | __Y__ | year A.D. |
+| Time       | 00..23            | __H__ | 24 hour |
+| Time       | 00..59            | __i__ | minutes |
+| Time       | 00..59            | __s__ | seconds |
+
 ###	Others
 
 *	number __dafo.getDayOfYear__(Date *date*)  
@@ -194,6 +218,8 @@ ATTENTION: Most, but __NOT ALL__ format characters used in PHP function `date()`
 
 *	boolean __dafo.isLeapYear__(Date *date*)  
 	Return `true` if the year of *date* is leap. Otherwise return `false`.
+
+*	Date __dafo.parse__(string *date*, string *format*)
 
 ###	Week Mode
 
