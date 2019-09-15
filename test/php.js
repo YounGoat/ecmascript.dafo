@@ -160,6 +160,10 @@ describe('php ', () => {
 		assert.strictEqual(date_format(d1, 'v'), '052');
 	});
 
+	it('Y/m/d/H\\H/is', () => {
+		console.log(date_format(d1, 'Y/m/d/H\\H/is'));
+	});
+
 	it.skip('e, Timezone identifier (added in PHP 5.1.0)	Examples: UTC, GMT, Atlantic/Azores', () => {
 		// TODO
 	});

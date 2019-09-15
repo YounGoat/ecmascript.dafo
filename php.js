@@ -188,6 +188,7 @@ function date_format(date, mask) {
 		let char = mask[cursor];
 		if (escaped) {
 			output += char;
+			escaped = false;
 		}
 		else if (char == ESCAPE_CHAR) {
 			escaped = true;
