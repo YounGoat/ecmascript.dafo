@@ -115,4 +115,14 @@ describe('dafo', () => {
 		assert(!dafo.isLeapYear(new Date(2001, 0, 1)));
 	});
 	
+	it.only('toSeconds()', () => {
+		assert.equal(dafo.toSeconds(   '30s'), 30);
+		assert.equal(dafo.toSeconds(    '1m'), 60);
+		assert.equal(dafo.toSeconds(    '1h'), 3600);
+		assert.equal(dafo.toSeconds(    '1d'), 86400);
+		assert.equal(dafo.toSeconds(  '1d1m'), 86400 + 60);
+		assert.equal(dafo.toSeconds(  '  1M'), 86400 * 30);
+		assert.equal(dafo.toSeconds(  '  1y'), 86400 * 365);
+		assert.equal(dafo.toSeconds(  '  1Q'), 86400 * 90);
+	})
 });

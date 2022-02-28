@@ -18,6 +18,7 @@ To format date in [PHP](#dafophp) or [MySQL](#dafomysql) style.
 	*	[dafo/mysql](#dafomysql)
 	*	[dafo/php](#dafophp)
 	*	[dafo.parse](#dafoparse)
+	*	[dafo.toSeconds](#dafotoseconds)
 	*	[Others](#others)
 *	[Why dafo](#why-dafo)
 *	[About](#about)
@@ -193,6 +194,26 @@ Argument *format* describes what and how makes up *date* string. Acceptable plac
 | Time       | 00..23            | __H__ | 24 hour |
 | Time       | 00..59            | __i__ | minutes |
 | Time       | 00..59            | __s__ | seconds |
+
+###	dafo.toSeconds
+
+```javascript
+const dafo = require('dafo');
+let secondCount = dafo.toSeconds('1d2h');
+```
+
+*	Date __dafo.toSeconds__(string *age*)
+
+Argument *age* is an expression used to describe age, generally that of HTTP cache.
+
+| Unit  | Meaning                                     |
+| :---- | :------------------------------------------ |
+| __s__ | second(s) |
+| __m__ | minute(s) |
+| __h__ | hour(s) |
+| __d__ | day(s) |
+| __M__ | month(es) |
+| __Y__ | year(s) |
 
 ###	Others
 

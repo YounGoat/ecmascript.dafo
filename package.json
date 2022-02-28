@@ -11,7 +11,7 @@
         "test": "mocha"
     },
     "name": "dafo",
-    "version": "0.1.1",
+    "version": "0.1.2-majon.0",
     "main": "index.js",
     "keywords": [
         "date-format",

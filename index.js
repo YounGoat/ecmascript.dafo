@@ -16,4 +16,5 @@ module.exports = {
     getYearWeek   : require('./getYearWeek'),
     isLeapYear    : require('./isLeapYear'),
     parse         : require('./parse'),
+    toSeconds     : require('./toSeconds'),
 };

@@ -1,3 +1,7 @@
+/**
+ * 本例中，部分测试用例依赖的占位符尚未实现。
+ */
+
 'use strict';
 
 const MODULE_REQUIRE = 1
@@ -161,7 +165,7 @@ describe('php ', () => {
 	});
 
 	it('Y/m/d/H\\H/is', () => {
-		console.log(date_format(d1, 'Y/m/d/H\\H/is'));
+		assert.strictEqual(date_format(d1, 'Y/m/d/H\\H/is'), '2000/01/01/13H/1406');
 	});
 
 	it.skip('e, Timezone identifier (added in PHP 5.1.0)	Examples: UTC, GMT, Atlantic/Azores', () => {
