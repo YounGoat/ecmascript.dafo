@@ -11,7 +11,7 @@
         "test": "mocha"
     },
     "name": "dafo",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "keywords": [
         "date-format",
@@ -31,5 +31,6 @@
         "name": "YounGoat",
         "email": "youngoat@163.com",
         "url": "https://youngoat.github.io"
-    }
+    },
+    "license": "MIT"
 }
